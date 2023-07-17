@@ -5,11 +5,22 @@ const router = express.Router();
 
 // return all favorite images
 router.get('/', (req, res) => {
-  res.sendStatus(200);
+  const queryText = `SELECT submission.img_src FROM submission;`
+  pool.query(queryText)
+    .then((result) => {res.send(result.rows);})
+    .catch((err) => {
+      console.log('FAILED TO GET GIFS', err);
+      res.sendStatus(500);
+    })
 });
 
 // add a new favorite
 router.post('/', (req, res) => {
+  const newGif = req.body;
+  console.log(newGif);
+  const queryText = `INSERT INTO submission ("img_src")
+    VALUES ($1);`;
+  const queryValues =
   res.sendStatus(200);
 });
 

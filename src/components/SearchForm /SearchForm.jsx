@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -10,14 +8,20 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 function SearchForm() {
 
-    import * as React from 'react';
-    import TextField from '@mui/material/TextField';
-    import Autocomplete from '@mui/material/Autocomplete';
-    
-    export default function ComboBox() {
+  // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+  const top100Films = [
+    { label: 'funny', id: 1 },
+    { label: 'cohort', id: 2 },
+    { label: 'cartoon', id: 3 },
+    { label: 'nsfw', id: 4 },
+    { label: 'meme', id: 5 },
+
+  ];
       return (
         <Autocomplete
           disablePortal
@@ -29,16 +33,5 @@ function SearchForm() {
       );
     }
     
-    // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-    const top100Films = [
-      { label: 'funny', id: 1 },
-      { label: 'cohort', id: 2 },
-      { label: 'cartoon', id: 3 },
-      { label: 'nsfw', id: 4 },
-      { label: 'meme', id: 5 },
-
-    ];
-    
-} 
 
 export default SearchForm;
